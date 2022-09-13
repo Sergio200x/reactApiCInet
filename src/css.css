@@ -7,7 +7,7 @@ li{
     margin-left: 3%;
 }
 body{
-        
+      
     margin: auto;
     background-color:  whitesmoke ;  
     background-size: 100%;
@@ -33,46 +33,57 @@ ul{
 }
 
 .principal_container
-{
+{ position: relative; 
     width: 95%;
     border: 3px outset #286698;
     border-radius: 2% 30%;
     margin:auto;
-    margin-top: 3%;   
-  
+    margin-top: 8%;     
     opacity: 80%;
     background-color: whitesmoke;
     box-shadow:0 0 0 0px #286698,
     0 10px 15px ;
-    transition: all 450ms   
+    transition: all 450ms ;   
+    height: 95%;
+    
+   
 }
+
+
+
 .principal_container:hover
 {
     border: 6px inset #286698;
     width: 97%;
     opacity: 90%;
+    
 }
 
 .container{
     margin-top:5%;
     width: 90%; 
     margin-left: 8%;  
-    margin-bottom: 6%;     
+    margin-bottom: 6%;  
+    min-height: 90%;    
+    
 }
 
 .icono
 {
     width: 40%;
+    
 }
 
 .icono_lente{
     width: 70%;
     transition: all 450ms;
-      ;
+      
 }
-.icono_lente:hover{
-    width: 73%;
+
+.icono_flechaalta{
+width: 55%;
 }
+
 
 
 
@@ -112,7 +123,8 @@ ul{
 .titulos
 {
     display: flex;
-    max-width: 90%; 
+    max-width:95%;
+     
     
 }
 .titulo_numeros
@@ -121,23 +133,70 @@ ul{
     display: flex;  
     overflow:hidden;
     width: 96%;
-    margin-left: 9%;
-    margin-right: 1%;
+    margin-left:15%;
+    
+   
     
 }
 
 .titulo_nombres{   
     
-     
+    
+}
+.titulo_individual
+{
+    width: 120%;
+    margin-top: 35%;
 }
 
-.titulo_numeros_individual{
-
-    align-items: center;  
-    margin-left: 12%;
-    padding-left: 2%;    
-    flex-direction: row;
-    text-align: center; 
-    width: 100%;    
+.titulo_numeros_individual{   
     
+     
+    width: 100%;      
+    margin-top: 10px;
+    padding-bottom: 3px;
+ 
+   
+}
+
+/*.logo_div
+{
+    
+    position: absolute;
+ left: 0%;
+    transition: all 450ms;   
+    z-index: 10;  
+   border: 1px solid #286698;
+    width: 50%;
+    display: block;
+    padding-right: 0%;
+    margin-right:0%; 
+    object-fit: contain;
+    padding-left: 0%;
+    margin-right: 0;
+
+}
+.logo_div:hover
+{
+    transform: rotatez(-90deg);
+  
+}
+
+.logo
+{
+display: block;
+ width: 100%;
+ object-fit: contain;
+    
+}
+*/
+
+
+.h4_titulo{
+    text-align: center;
+    height:2px;
+    width:95%; 
+    
+  
+     
 }
