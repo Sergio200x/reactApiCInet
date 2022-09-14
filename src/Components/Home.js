@@ -7,6 +7,7 @@ import flecha_baja from '../images/flecha-bajando.png'
 import estrella from '../images/estrella.png'
 import logo_Cinet from '../images/LogoCinetMinimal.png'
 import flecha_subiendo from '../images/flecha-diagonal.png'
+import loadingif from '../images/loading-32.gif'
 
 function App(){
     const url="http://localhost:3030/"
@@ -34,6 +35,7 @@ const icono_flecha_alta= <img src={flecha_alta} className="icono_flechaalta" />
 const icono_estrella= <img src={estrella} className="icono_lente" />
 const icono_flecha_diagonal = <img src={flecha_subiendo} className="icono"/>
 //const icono_Cinet = <img src={logo_Cinet} clasName="logo"width="30%"  />
+const loading = <img src={loadingif} className="loading"/>
 const minimo_Necesario =120
 const minimo_diario_Nec=minimo_Necesario/5
 const minimo_x_hora = minimo_diario_Nec/8
@@ -47,7 +49,9 @@ const horas_mesa =[
     {Horas:40,Nombre:"NicolasR"} ]
 //se agregan 7 horas a facu_P,se quitan horas a maxi ya que 
 //divide su tiempo con 5 asec
-
+/*<h2 className='volver'>
+<Link to="/"  className='volverlink'>Volver al Inicio</Link>
+ </h2> */
  
 
     return (
@@ -67,7 +71,7 @@ const horas_mesa =[
                 
                 </div>
                 </div>
-                {!tickets?"Cargando...":tickets.data.map(function(ticket,i){
+                {!tickets?loading:tickets.data.map(function(ticket,i){
                     return <ul key={i} >                     
                         <div className='list_container'> 
                         <div className='item_nombre'> <li><strong>{ticket.Mesa}</strong> </li></div> 
@@ -101,7 +105,7 @@ const horas_mesa =[
                         </div>
                     </ul>
                 })}                            
-                           
+                            
                             
             </div> 
 

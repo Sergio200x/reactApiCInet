@@ -13,7 +13,7 @@ body{
     background-size: 100%;
     max-width: 1024px;
     background-image: url(../src/images/fondo.png);
-    
+    max-height: 1920px;
 }
 
 ul{
@@ -30,6 +30,8 @@ ul{
     margin: auto;
     margin-top: 5%;
     margin-bottom: -5%;
+    color: #072944;
+    font-size: 30px;
 }
 
 .principal_container
@@ -49,6 +51,10 @@ ul{
    
 }
 
+.container_1{
+    max-height: 3000px;
+    height: 650px;
+}
 
 
 .principal_container:hover
@@ -73,7 +79,13 @@ ul{
     width: 40%;
     
 }
+.loading{
+width: 35%;
+margin-top: 7%;
 
+
+
+}
 .icono_lente{
     width: 70%;
     transition: all 450ms;
@@ -134,13 +146,14 @@ width: 55%;
     overflow:hidden;
     width: 96%;
     margin-left:15%;
+    color: #072944;
     
    
     
 }
 
 .titulo_nombres{   
-    
+    color: #072944;
     
 }
 .titulo_individual
