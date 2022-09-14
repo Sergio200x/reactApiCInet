@@ -8,6 +8,7 @@ import estrella from '../images/estrella.png'
 import logo_Cinet from '../images/LogoCinetMinimal.png'
 import flecha_subiendo from '../images/flecha-diagonal.png'
 import loadingif from '../images/loading-32.gif'
+import {Link,Route,Switch,BrowserRouter,Routes} from 'react-router-dom'
 
 function App(){
     const url="http://localhost:3030/"
@@ -49,9 +50,7 @@ const horas_mesa =[
     {Horas:40,Nombre:"NicolasR"} ]
 //se agregan 7 horas a facu_P,se quitan horas a maxi ya que 
 //divide su tiempo con 5 asec
-/*<h2 className='volver'>
-<Link to="/"  className='volverlink'>Volver al Inicio</Link>
- </h2> */
+/* */
  
 
     return (
@@ -106,7 +105,7 @@ const horas_mesa =[
                     </ul>
                 })}                            
                             
-                            
+                        
             </div> 
 
         </div>
