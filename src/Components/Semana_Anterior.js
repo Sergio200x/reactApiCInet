@@ -96,11 +96,12 @@ const horas_mesa =[
                         </div>
                         </div>
                     </ul>
+                    
                 })}                            
-                   <h2 className='volver'>
+                          
+                          <h2 className='volver'>
                 <Link to="/"  className='volverlink'>Pagina Principal</Link>
-                    </h2>          
-                            
+                    </h2>              
             </div> 
 
         </div>

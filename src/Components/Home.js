@@ -98,13 +98,14 @@ const horas_mesa =[
                                                 ticket.cerrados_semana>=(Math.round((ticket.cerrados_3meses/3)/4))/2?icono_flecha_media:icono_flecha_baja} 
                                                 </strong></li> 
                             </div>
-                       
-                    
+                                                  
                         </div>
                         </div>
                     </ul>
                 })}                            
-                            
+            <h2 className='volver'>
+                <Link to="/semanaAnterior"  className='volverlink'>Semana Anterior</Link>
+                    </h2>                
                         
             </div> 
 
