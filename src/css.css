@@ -34,6 +34,8 @@ ul{
     font-size: 30px;
 }
 
+
+
 .principal_container
 { position: relative; 
     width: 95%;
@@ -97,8 +99,15 @@ margin-top: 7%;
 }
 
 .icono_flechaalta{
-width: 55%;
-max-width: 55px;
+width: 30%;
+max-width: 45px;
+}
+
+.icono_flechamedia
+{
+    width: 41%;
+    max-width: 50px;
+    margin-left: 5%;
 }
 
 
@@ -143,10 +152,18 @@ max-width: 55px;
 .titulos
 {
     display: flex;
-    max-width:95%;
-     
+    max-width:95%;    
     
 }
+
+.titulos_ult_semana
+{
+    display: flex;
+    max-width:85%;    
+    
+}
+
+
 .titulo_numeros
 {
    
@@ -237,4 +254,54 @@ display: block;
     margin-bottom: -30px;
     margin: auto;
     
+}
+
+/*DASH SINCRONIZACION*/
+
+.titulo_Nombre_Syncro
+{
+    
+    margin-top: 5%;
+    width: 30%;
+    margin-left: -3%;
+    
+}
+
+.titulo_Horas_Syncro{
+    margin-top: 5%;
+    width: 50%;
+    margin-left: 2%;
+    
+}
+
+.list_container_syncro
+{
+
+    display: flex;
+    align-items: center;
+    margin: auto;
+    flex-direction: row;
+    text-align: center; 
+    border-bottom: 1px solid; 
+    width: 100%;  
+    max-width: 1024px;
+    max-height: 50px;
+
+}
+
+
+.container_syncro{
+    margin-top:5%;
+    width: 40%; 
+    margin-left: 8%;  
+    margin-bottom: 6%;  
+   
+    
+}
+
+.item_nombre_syncro
+{
+  width: 30%;
+  margin-right: 2%; 
+  
 }

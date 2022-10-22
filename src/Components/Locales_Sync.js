@@ -25,7 +25,15 @@ function Sync(){
         fetchApi()
     },[])
      
-   
+ var locales = [] 
+
+if (syncro.data.length>0)
+{
+    syncro.data.map(function(syncro,i){
+        return locales.push(syncro.horas)
+        console.log("hola")
+    })
+}
 
 
     
@@ -46,33 +54,27 @@ const loading = <img src={loadingif} className="loading"/>
         <div className='principal_container'>         
         
             <h2 className='titulo'>DashBoard Cinet</h2>
-            <div className='container'>
-                <div className='titulos'>
-                <div className='titulo_nombres'><h4 className='titulo_individual'>Local</h4></div>
+            <div className='container_syncro'>
+            <div className='titulos'>
+                <div className='titulo_Nombre_Syncro'><h4 className='titulo_individual'>Local</h4></div>
                 <div className='titulo_numeros'>
-                <div className='titulo_numeros_individual'><h4 className='h4_titulo'> Estado</h4></div>
-                <div className='titulo_numeros_individual'><h4 className='h4_titulo'> Obs</h4></div>
-                              
+                <div className='titulo_Horas_Syncro'><h4 className='h4_titulo'>Horas sin Tansmitir</h4></div>
                 </div>
                 </div>
-                {!syncro?loading:syncro.data.map(function(syncro,i){
-                    if(syncro.Estado_Local==='Desactualizado'){
-                    return <ul key={i} >
-                                            
-                        <div className='list_container'> 
-                        
+                
+                {!syncro?loading:syncro.data.map(function(syncro,i){                   
+                    return <ul key={i} >                                            
+                        <div className='list_container_syncro'> 
+                        <div className='item_nombre_syncro'> <li><strong>{syncro.Codigo_de_local}</strong> </li></div>
                         <div className='numeros'>
-                        <div className='item'><li><strong>{syncro.Codigo_de_local} </strong></li></div>                            
-                        <div className='item'><li><strong>{syncro.Estado_Local} </strong></li></div>
-                        
-                            
-                        </div>
-                        </div>
+                        <div className='item'><li><strong>{syncro.horas} </strong></li></div>                          
+                    </div>
+            </div>
                     </ul>
-               } })}                            
+                })}                            
             <h2 className='volver'>
                 <Link to="/Sync"  className='volverlink'>Semana Anterior</Link>
-                    </h2>                
+                    </h2>              
                         
             </div> 
 

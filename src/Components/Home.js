@@ -30,7 +30,7 @@ function App(){
 
     
 
-const icono_flecha_media= <img src={flecha_media} className="icono" />
+const icono_flecha_media= <img src={flecha_media} className="icono_flechamedia" />
 const icono_flecha_baja= <img src={flecha_baja} className="icono" />
 const icono_flecha_alta= <img src={flecha_alta} className="icono_flechaalta" />
 const icono_estrella= <img src={estrella} className="icono_lente" />

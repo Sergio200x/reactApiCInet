@@ -62,7 +62,7 @@ const horas_mesa =[
         
             <h2 className='titulo'>DashBoard Cinet</h2>
             <div className='container'>
-                <div className='titulos'>
+                <div className='titulos_ult_semana'>
                 <div className='titulo_nombres'><h4 className='titulo_individual'>Mesa de Ayuda</h4></div>
                 <div className='titulo_numeros'>              
                 <div className='titulo_numeros_individual'><h4 className='h4_titulo'>Sem. Ant. Vs Prom. Sem.</h4></div>                
