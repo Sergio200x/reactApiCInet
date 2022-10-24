@@ -105,7 +105,10 @@ const horas_mesa =[
                 })}                            
             <h2 className='volver'>
                 <Link to="/semanaAnterior"  className='volverlink'>Semana Anterior</Link>
-                    </h2>                
+                    </h2> 
+                    <h2 className='volver'>
+                <Link to="/Sync"  className='volverlink'>No Sync</Link>
+                    </h2>                 
                         
             </div> 
 

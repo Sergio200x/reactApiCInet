@@ -11,30 +11,32 @@ import loadingif from '../images/loading-32.gif'
 import {Link,Route,Switch,BrowserRouter,Routes} from 'react-router-dom'
 
 function Sync(){
-    const url="http://localhost:3031/synclocales"
-    const [syncro,setSync]=useState()
-   
-        const fetchApi= async()=>{
-            const response = await fetch(url)
-            
-            const responseJSON= await response.json()
-            setSync(responseJSON)  
-                
-    }   
-    useEffect(()=>{
-        fetchApi()
-    },[])
-     
- var locales = [] 
+    
+    const [syncro, setSync]= useState([])    
+    useEffect (() => {        
+            fetch("http://localhost:3031/synclocales")
+            .then(response => response.json())
+            .then( data =>{ setSync(data.data)} )
+            .catch(error =>console.error(error))
+            }, [])    
+    const [syncroGMG, setSyncGMG]= useState([])    
+            useEffect (() => {        
+                    fetch("http://localhost:3031/synclocales")
+                    .then(response => response.json())
+                    .then( data =>{ setSyncGMG(data.data)} )
+                    .catch(error =>console.error(error))
+                    }, [])   
 
-if (syncro.data.length>0)
-{
-    syncro.data.map(function(syncro,i){
-        return locales.push(syncro.horas)
-        console.log("hola")
-    })
-}
+     let locales=[]
 
+            if(syncro.length>0)
+            {
+                locales.push(syncro)
+                console.log(locales[0])
+            }
+            else{
+                locales= "No hay datos"                
+            } 
 
     
 
@@ -55,25 +57,28 @@ const loading = <img src={loadingif} className="loading"/>
         
             <h2 className='titulo'>DashBoard Cinet</h2>
             <div className='container_syncro'>
-            <div className='titulos'>
-                <div className='titulo_Nombre_Syncro'><h4 className='titulo_individual'>Local</h4></div>
-                <div className='titulo_numeros'>
-                <div className='titulo_Horas_Syncro'><h4 className='h4_titulo'>Horas sin Tansmitir</h4></div>
-                </div>
-                </div>
+            <div className='titulos_syncro'>
+                <div className='titulo_Nombre_Syncro'><h4>Local</h4></div>
                 
-                {!syncro?loading:syncro.data.map(function(syncro,i){                   
+                <div className='titulo_Horas_Syncro'><h4>Horas sin Tansmitir</h4></div>
+                
+
+                </div>
+                {!locales?loading:Array.from(locales).map(function(syncro,i){ 
+                    return      (
+                    !syncro?loading:Array.from(syncro).map(function(syncro1,i){                   
                     return <ul key={i} >                                            
                         <div className='list_container_syncro'> 
-                        <div className='item_nombre_syncro'> <li><strong>{syncro.Codigo_de_local}</strong> </li></div>
-                        <div className='numeros'>
-                        <div className='item'><li><strong>{syncro.horas} </strong></li></div>                          
-                    </div>
-            </div>
+                            <div className='item_nombre_syncro'><li><strong>{syncro1.Codigo_de_local}</strong> </li></div>
+                            <div className='numeros_syncro'>
+                                <div className='item_syncro'><li><strong>{syncro1.horas} </strong></li></div>                          
+                            </div>
+                        </div>
                     </ul>
-                })}                            
+                })    )
+            })}                      
             <h2 className='volver'>
-                <Link to="/Sync"  className='volverlink'>Semana Anterior</Link>
+                <Link to="/"  className='volverlink'>Volver al Dash Principal</Link>
                     </h2>              
                         
             </div> 

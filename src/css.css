@@ -250,9 +250,10 @@ display: block;
 }
 .volver
 {
-    width: 200px;
+    width: 57%;
     margin-bottom: -30px;
     margin: auto;
+    margin-top: 9%;
     
 }
 
@@ -279,11 +280,12 @@ display: block;
 
     display: flex;
     align-items: center;
-    margin: auto;
+    /* margin: auto; */
     flex-direction: row;
-    text-align: center; 
-    border-bottom: 1px solid; 
-    width: 100%;  
+    text-align: center;
+    border-bottom: 1px solid;
+    border-left: 1px solid;
+    width: 63%;
     max-width: 1024px;
     max-height: 50px;
 
@@ -304,4 +306,29 @@ display: block;
   width: 30%;
   margin-right: 2%; 
   
+}
+
+.numeros_syncro
+{
+    display: flex;
+    align-items: center;
+    margin-left: 13%;
+    flex-direction: row;
+    text-align: center;
+    width: 35%;
+}
+
+.item_syncro{
+    
+    width: 95%;
+    /* margin-right: 5%; */
+    /* max-height: 40px; */
+    margin-left: 84%;       
+      
+}
+.titulos_syncro
+{
+    display: flex;
+    max-width:95%;
+    margin-left: -4%;  
 }
