@@ -21,18 +21,29 @@ function Sync(){
             }, [])    
     const [syncroGMG, setSyncGMG]= useState([])    
             useEffect (() => {        
-                    fetch("http://localhost:3031/synclocales")
+                    fetch("http://localhost:3032/synclocales")
                     .then(response => response.json())
                     .then( data =>{ setSyncGMG(data.data)} )
                     .catch(error =>console.error(error))
-                    }, [])   
+                    }, []) 
+    const [syncroUY, setSyncUY]= useState([])    
+            useEffect (() => {        
+                    fetch("http://localhost:3033/synclocales")
+                    .then(response => response.json())
+                    .then( data =>{ setSyncUY(data.data)} )
+                    .catch(error =>console.error(error))
+                    }, [])                 
+                    
+                    
 
      let locales=[]
 
-            if(syncro.length>0)
+            if(syncro.length>0||syncroGMG.length>0||syncroUY.length>0)
             {
                 locales.push(syncro)
-                console.log(locales[0])
+                locales.push(syncroGMG)
+                locales.push(syncroUY)
+                
             }
             else{
                 locales= "No hay datos"                
