@@ -262,73 +262,58 @@ display: block;
 .titulo_Nombre_Syncro
 {
     
-    margin-top: 5%;
-    width: 30%;
-    margin-left: -3%;
     
 }
 
 .titulo_Horas_Syncro{
-    margin-top: 5%;
-    width: 50%;
-    margin-left: 2%;
-    
+   
 }
 
 .list_container_syncro
 {
-
     display: flex;
-    align-items: center;
-    /* margin: auto; */
-    flex-direction: row;
-    text-align: center;
-    border-bottom: 1px solid;
-    border-left: 1px solid;
-    width: 63%;
-    max-width: 1024px;
-    max-height: 50px;
+    width: 55%;
+    margin-left: 5%
+
 
 }
 
 
 .container_syncro{
-    margin-top:5%;
-    width: 40%; 
-    margin-left: 8%;  
-    margin-bottom: 6%;  
-   
+    
     
 }
 
 .item_nombre_syncro
 {
-  width: 30%;
-  margin-right: 2%; 
-  
+    width: 29%;
 }
 
 .numeros_syncro
 {
-    display: flex;
-    align-items: center;
-    margin-left: 13%;
-    flex-direction: row;
-    text-align: center;
-    width: 35%;
+ 
 }
 
 .item_syncro{
     
-    width: 95%;
-    /* margin-right: 5%; */
-    /* max-height: 40px; */
-    margin-left: 84%;       
+    
       
 }
 .titulos_syncro
 {
     display: flex;
-    max-width:95%;
-    margin-left: -4%;  
+    width: 58%;
+    justify-content: space-around;
+    margin-top: 9%;
+    margin-left: 3%;
+}
+
+.item_nombres_syncro{
+    width: 67%;
+}
+
+.titulo_Nombres_Syncro
+{
+  
+
 }

@@ -33,20 +33,27 @@ function Sync(){
                     .then( data =>{ setSyncUY(data.data)} )
                     .catch(error =>console.error(error))
                     }, [])                 
-                    
+    const [syncroPY, setSyncPY]= useState([])    
+            useEffect (() => {        
+                    fetch("http://localhost:3034/synclocales")
+                    .then(response => response.json())
+                    .then( data =>{ setSyncPY(data.data)} )
+                    .catch(error =>console.error(error))
+                     }, [])                  
                     
 
      let locales=[]
 
-            if(syncro.length>0||syncroGMG.length>0||syncroUY.length>0)
+            if(syncro.length>0||syncroGMG.length>0||syncroUY.length>0||syncroPY.length>0)
             {
                 locales.push(syncro)
                 locales.push(syncroGMG)
                 locales.push(syncroUY)
+                locales.push(syncroPY)
                 
             }
             else{
-                locales= "No hay datos"                
+                locales.push('No hay datos')               
             } 
 
     
@@ -70,20 +77,17 @@ const loading = <img src={loadingif} className="loading"/>
             <div className='container_syncro'>
             <div className='titulos_syncro'>
                 <div className='titulo_Nombre_Syncro'><h4>Local</h4></div>
-                
-                <div className='titulo_Horas_Syncro'><h4>Horas sin Tansmitir</h4></div>
-                
-
-                </div>
-                {!locales?loading:Array.from(locales).map(function(syncro,i){ 
+                <div className='titulo_Nombres_Syncro'><h4>Nombre del local</h4></div>
+                <div className='titulo_Nombre_Syncro'><h4>Horas sin Tansmitir</h4></div>               
+            </div>
+                {Array.from(locales).map(function(syncro,i){ 
                     return      (
-                    !syncro?loading:Array.from(syncro).map(function(syncro1,i){                   
+                    Array.from(syncro).map(function(syncro1,i){                   
                     return <ul key={i} >                                            
                         <div className='list_container_syncro'> 
                             <div className='item_nombre_syncro'><li><strong>{syncro1.Codigo_de_local}</strong> </li></div>
-                            <div className='numeros_syncro'>
-                                <div className='item_syncro'><li><strong>{syncro1.horas} </strong></li></div>                          
-                            </div>
+                            <div className='item_nombres_syncro'><li><strong>{syncro1.Nombre_local}</strong> </li></div>
+                            <div className='item_nombre_syncro'><li><strong>{syncro1.horas} </strong></li></div>                       
                         </div>
                     </ul>
                 })    )
