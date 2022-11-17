@@ -14,28 +14,28 @@ function Sync(){
     
     const [syncro, setSync]= useState([])    
     useEffect (() => {        
-            fetch("http://localhost:3031/synclocales")
+            fetch("http://192.168.1.57:3031/synclocales")
             .then(response => response.json())
             .then( data =>{ setSync(data.data)} )
             .catch(error =>console.error(error))
             }, [])    
     const [syncroGMG, setSyncGMG]= useState([])    
             useEffect (() => {        
-                    fetch("http://localhost:3032/synclocales")
+                    fetch("http://192.168.1.57:3032/synclocales")
                     .then(response => response.json())
                     .then( data =>{ setSyncGMG(data.data)} )
                     .catch(error =>console.error(error))
                     }, []) 
     const [syncroUY, setSyncUY]= useState([])    
             useEffect (() => {        
-                    fetch("http://localhost:3033/synclocales")
+                    fetch("http://192.168.1.57:3033/synclocales")
                     .then(response => response.json())
                     .then( data =>{ setSyncUY(data.data)} )
                     .catch(error =>console.error(error))
                     }, [])                 
     const [syncroPY, setSyncPY]= useState([])    
             useEffect (() => {        
-                    fetch("http://localhost:3034/synclocales")
+                    fetch("http://192.168.1.57:3034/synclocales")
                     .then(response => response.json())
                     .then( data =>{ setSyncPY(data.data)} )
                     .catch(error =>console.error(error))
@@ -92,13 +92,14 @@ const loading = <img src={loadingif} className="loading"/>
                     </ul>
                 })    )
             })}                      
-            <h2 className='volver'>
-                <Link to="/"  className='volverlink'>Volver al Dash Principal</Link>
-                    </h2>              
+              <h2 className='volver'>
+                <Link to="/"  className='volverlink_sync'>Volver al Dash Principal</Link>
+                    </h2>            
                         
             </div> 
-
+	
         </div>
+	
     </div>        
     )
 }

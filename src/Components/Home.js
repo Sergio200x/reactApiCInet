@@ -3,7 +3,7 @@ import '../App.js'
 import '../../src/css.css'
 import flecha_media from '../images/flecha-centro.png'
 import flecha_alta from '../images/flecha-subiendo.png'
-import flecha_baja from '../images/flecha-bajando.png'
+import flecha_baja from '../images/pala.png'
 import estrella from '../images/estrella.png'
 import logo_Cinet from '../images/LogoCinetMinimal.png'
 import flecha_subiendo from '../images/flecha-diagonal.png'
@@ -11,7 +11,7 @@ import loadingif from '../images/loading-32.gif'
 import {Link,Route,Switch,BrowserRouter,Routes} from 'react-router-dom'
 
 function App(){
-    const url="http://localhost:3030/"
+    const url="http://192.168.1.57:3030/"
     const [tickets,setTicket]=useState()
    
         const fetchApi= async()=>{
@@ -42,7 +42,7 @@ const minimo_diario_Nec=minimo_Necesario/5
 const minimo_x_hora = minimo_diario_Nec/8
 const horas_mesa =[
     {Horas:35,Nombre:"Facundo_p"},
-    {Horas:32,Nombre:"MaximoT"},
+    {Horas:20,Nombre:"MaximoT"},
     {Horas:28,Nombre:"LeandroT"},    
     {Horas:32,Nombre:"Leonel"},
     {Horas:23,Nombre:"FacundoL"},
@@ -100,19 +100,24 @@ const horas_mesa =[
                             </div>
                                                   
                         </div>
+			
                         </div>
                     </ul>
-                })}                            
+                })} 
+                <div className='container_volver'>                           
             <h2 className='volver'>
                 <Link to="/semanaAnterior"  className='volverlink'>Semana Anterior</Link>
                     </h2> 
                     <h2 className='volver'>
                 <Link to="/Sync"  className='volverlink'>No Sync</Link>
                     </h2>                 
-                        
+                </div>       
             </div> 
 
         </div>
+	<div>
+			
+	</div>
     </div>        
     )
 }

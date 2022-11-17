@@ -12,7 +12,7 @@ import {Link,Route,Switch,BrowserRouter,Routes} from 'react-router-dom'
 
 
 function App_semana_anterior(){
-    const url="http://localhost:3030/semana_pasada"
+    const url="http://192.168.1.57:3030/semana_pasada"
     const [tickets_semana_anterior,setTicket]=useState()
    
         const fetchApi= async()=>{
