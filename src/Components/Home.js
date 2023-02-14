@@ -3,8 +3,10 @@ import '../App.js'
 import '../../src/css.css'
 import flecha_media from '../images/flecha-centro.png'
 import flecha_alta from '../images/flecha-subiendo.png'
-import flecha_baja from '../images/pala.png'
+import flecha_baja from '../images/flecha-bajando.png'
+import pala from '../images/pala.png'
 import estrella from '../images/estrella.png'
+import rey from '../images/rey1.png'
 import logo_Cinet from '../images/LogoCinetMinimal.png'
 import flecha_subiendo from '../images/flecha-diagonal.png'
 import loadingif from '../images/loading-32.gif'
@@ -14,7 +16,7 @@ function App(){
     const url="http://192.168.1.57:3030/"
     const [tickets,setTicket]=useState()
    
-        const fetchApi= async()=>{
+        const fetchApil= async()=>{
             const response = await fetch(url)
             
             const responseJSON= await response.json()
@@ -22,7 +24,7 @@ function App(){
                 
     }   
     useEffect(()=>{
-        fetchApi()
+        fetchApil()
     },[])
      
    
@@ -35,6 +37,7 @@ const icono_flecha_baja= <img src={flecha_baja} className="icono" />
 const icono_flecha_alta= <img src={flecha_alta} className="icono_flechaalta" />
 const icono_estrella= <img src={estrella} className="icono_lente" />
 const icono_flecha_diagonal = <img src={flecha_subiendo} className="icono"/>
+const reydereyes = <img src={rey} className="icono_rey"/>
 //const icono_Cinet = <img src={logo_Cinet} clasName="logo"width="30%"  />
 const loading = <img src={loadingif} className="loading"/>
 const minimo_Necesario =120
@@ -42,14 +45,17 @@ const minimo_diario_Nec=minimo_Necesario/5
 const minimo_x_hora = minimo_diario_Nec/8
 const horas_mesa =[
     {Horas:35,Nombre:"Facundo_p"},
+    {Horas:40,Nombre:"NATAN"}, 
     {Horas:20,Nombre:"MaximoT"},
     {Horas:28,Nombre:"LeandroT"},    
     {Horas:32,Nombre:"Leonel"},
     {Horas:23,Nombre:"FacundoL"},
-    {Horas:33,Nombre:"Gabriel"},
-    {Horas:40,Nombre:"NicolasR"} ]
+    {Horas:2,Nombre:"Gabriel"},
+    {Horas:40,Nombre:"NicolasR"},
+    {Horas:20,Nombre:"SantiagoA"},
+    {Horas:20,Nombre:"DAVIDO"}]
 //se agregan 7 horas a facu_P,se quitan horas a maxi ya que 
-//divide su tiempo con 5 asec
+//divide su tiempo con 5 asec foodbox y pes
 /* */
  
 
@@ -77,15 +83,18 @@ const horas_mesa =[
                         <div className='numeros'>                            
                         <div className='item'><li><strong>{ticket.cerrados_al_dia!==0?ticket.cerrados_al_dia:"--"} </strong></li></div> 
                         <div className='item'><li><strong>{ticket.cerrados_semana!==0?ticket.cerrados_semana:"--"}</strong></li> </div> 
-                        <div className='item'><li><strong>{ticket.cerrados_semana!==0?((ticket.cerrados_semana)>(minimo_x_hora*horas_mesa[i].Horas)+5?icono_estrella:
+                        <div className='item'><li><strong>{ticket.cerrados_semana!==0?((ticket.cerrados_semana)>(minimo_x_hora*horas_mesa[i].Horas)+7?reydereyes:
+                                                    (ticket.cerrados_semana)>(minimo_x_hora*horas_mesa[i].Horas)+4?icono_estrella:
                                                     (ticket.cerrados_semana)===minimo_x_hora*horas_mesa[i].Horas?icono_flecha_alta:
-                                                    (ticket.cerrados_semana)>=minimo_x_hora*horas_mesa[i].Horas/1.33?icono_flecha_diagonal:
+                                                    (ticket.cerrados_semana)>=minimo_x_hora*horas_mesa[i].Horas/1.33?icono_flecha_diagonal: 
                                                     (ticket.cerrados_semana)>=minimo_x_hora*horas_mesa[i].Horas/2?icono_flecha_media:icono_flecha_baja):
                                                     icono_flecha_baja}</strong> 
                                                     </li> 
                             </div>
                         <div className='item'><li><strong>{ticket.cerrados_al_dia===0?"--":ticket.cerrados_al_dia> 
-                                                (minimo_x_hora*horas_mesa[i].Horas)/5?icono_estrella:
+                                                ((minimo_x_hora*horas_mesa[i].Horas)/5)+4?reydereyes:
+                                                ticket.cerrados_al_dia> 
+                                                ((minimo_x_hora*horas_mesa[i].Horas)/5)?icono_estrella:
                                                 ticket.cerrados_al_dia===((minimo_x_hora*horas_mesa[i].Horas)/5)?icono_flecha_alta:
                                                 ticket.cerrados_al_dia>=((minimo_x_hora*horas_mesa[i].Horas)/5)/1.33?icono_flecha_diagonal:
                                                 ticket.cerrados_al_dia>=((minimo_x_hora*horas_mesa[i].Horas)/5)/2?icono_flecha_media:icono_flecha_baja}
@@ -93,6 +102,7 @@ const horas_mesa =[
                             </div>
                         <div className='item'><li><strong>{ticket.cerrados_3meses===0?"--":
                                                 (ticket.cerrados_semana>Math.round((ticket.cerrados_3meses/3)/4))?icono_estrella:
+                                                (ticket.cerrados_semana>(Math.round((ticket.cerrados_3meses/3)/4))+4)?reydereyes:
                                                 ticket.cerrados_semana===(Math.round((ticket.cerrados_3meses/3)/4))?icono_flecha_alta:
                                                 ticket.cerrados_semana>=(Math.round((ticket.cerrados_3meses/3)/4)/1.33)?icono_flecha_diagonal:
                                                 ticket.cerrados_semana>=(Math.round((ticket.cerrados_3meses/3)/4))/2?icono_flecha_media:icono_flecha_baja} 
@@ -110,6 +120,9 @@ const horas_mesa =[
                     </h2> 
                     <h2 className='volver'>
                 <Link to="/Sync"  className='volverlink'>No Sync</Link>
+                </h2>
+                <h2 className='volver'>
+                <Link to="/HD_SPACE"  className='volverlink'>Espacio en Disco</Link>
                     </h2>                 
                 </div>       
             </div> 

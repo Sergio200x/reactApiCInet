@@ -33,7 +33,7 @@ function App_semana_anterior(){
 
 const icono_flecha_media= <img src={flecha_media} className="icono" />
 const icono_flecha_baja= <img src={flecha_baja} className="icono" />
-const icono_flecha_alta= <img src={flecha_alta} className="icono_flechaalta" />
+const icono_flecha_alta= <img src={flecha_alta} className="icono_flechaalta_SA" />
 const icono_estrella= <img src={estrella} className="icono_lente" />
 const icono_flecha_diagonal = <img src={flecha_subiendo} className="icono"/>
 //const icono_Cinet = <img src={logo_Cinet} clasName="logo"width="30%"  />
@@ -43,12 +43,14 @@ const minimo_diario_Nec=minimo_Necesario/5
 const minimo_x_hora = minimo_diario_Nec/8
 const horas_mesa =[
     {Horas:35,Nombre:"Facundo_p"},
+    {Horas:40,Nombre:"NATAN"}, 
     {Horas:32,Nombre:"MaximoT"},
     {Horas:28,Nombre:"LeandroT"},    
     {Horas:32,Nombre:"Leonel"},
     {Horas:23,Nombre:"FacundoL"},
     {Horas:33,Nombre:"Gabriel"},
-    {Horas:40,Nombre:"NicolasR"} ]
+    {Horas:40,Nombre:"NicolasR"},
+    {Horas:20,Nombre:"SantiagoA"} ]
 //se agregan 7 horas a facu_P,se quitan horas a maxi ya que 
 //divide su tiempo con 5 asec
 /*<h2 className='volver'>
