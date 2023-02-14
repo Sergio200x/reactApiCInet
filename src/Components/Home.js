@@ -123,7 +123,13 @@ const horas_mesa =[
                 </h2>
                 <h2 className='volver'>
                 <Link to="/HD_SPACE"  className='volverlink'>Espacio en Disco</Link>
-                    </h2>                 
+                    </h2>
+                    <h2 className='volver'>
+                <Link to="/DATABASE_SPACE"  className='volverlink'>Espacio de BBDD</Link>
+                    </h2> 
+                    <h2 className='volver'>
+                <Link to="/LOG_SPACE"  className='volverlink'>Espacio LOG BBDD</Link>
+                    </h2>                     
                 </div>       
             </div> 
 

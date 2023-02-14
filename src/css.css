@@ -38,7 +38,7 @@ ul{
 
 .principal_container
 { position: relative; 
-    width: 95%;
+    width: 97%;
     border: 3px outset #286698;
     border-radius: 2% 30%;
     margin:auto;
@@ -59,14 +59,11 @@ ul{
    
 }
 
-
-.principal_container:hover
-{
-    border: 6px inset #286698;
-    width: 97%;
-    opacity: 95%;
-    
+.principal_container:hover{
+width:98%
 }
+
+
 
 .container{
     margin-top:5%;
@@ -270,6 +267,8 @@ display: block;
     display: flex;
     margin-bottom: -4%;
     margin-top: -4%;
+    margin-left: 10%;
+    width: 85%;
 }
 
 .volver

@@ -18,19 +18,29 @@ function HD_Space(){
             .then(response => response.json())
             .then( data =>{ setHD_SPACE(data.data)} )
             .catch(error =>console.error(error))
-            }, [])    
+            }, []) 
+            
+    const [HD_SPACEfrq, setHD_SPACEfrq]= useState([])    
+        useEffect (() => {        
+                fetch("http://192.168.1.57:3035/HD_SPACE")
+                .then(response => response.json())
+                .then( data =>{ setHD_SPACEfrq(data.data)} )
+                .catch(error =>console.error(error))
+                }, [])
+             
    
                     
 
      let HD_SPACE_locales=[]
 
-            if(HD_SPACE.length>0)
+            if(HD_SPACE.length>0||HD_SPACEfrq.length>0)
             {
-                HD_SPACE_locales.push(HD_SPACE)          
+                HD_SPACE_locales.push(HD_SPACE)
+                HD_SPACE_locales.push(HD_SPACEfrq)          
                 
             }
             else{
-                HD_SPACE_locales.push('No hay datos')               
+                HD_SPACE_locales.push("No hay Datos")               
             } 
 
     
