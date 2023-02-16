@@ -129,6 +129,9 @@ const horas_mesa =[
                     </h2> 
                     <h2 className='volver'>
                 <Link to="/LOG_SPACE"  className='volverlink'>Espacio LOG BBDD</Link>
+                    </h2>  
+                    <h2 className='volver'>
+                <Link to="/Versiones"  className='volverlink'>Versiones</Link>
                     </h2>                     
                 </div>       
             </div> 

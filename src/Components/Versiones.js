@@ -10,7 +10,7 @@ function Versiones(){
     const [buscarpr,setbuscarpr]= useState("")   
     const [buscar,setbuscar]= useState("")  
     useEffect (() => {        
-            fetch("http://localhost:3036/versiones")
+            fetch("http://192.168.1.57:3036/versiones")
             .then(response => response.json())
             .then( data =>{ setDATABASE_SPACE(data.data)} )
             .catch(error =>console.error(error))
@@ -45,8 +45,6 @@ if(buscar.length===0 && buscarpr.length===0)
     else{
         resultado=DATABASE_SPACE.filter((dato)=>       
         dato.Nro_version.toLowerCase()!==(buscar.toLocaleLowerCase())&& dato.Parametro.toLowerCase()===(buscarpr.toLocaleLowerCase()))        
-          
-        console.log(resultado)
         }
 
 

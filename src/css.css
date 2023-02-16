@@ -160,6 +160,7 @@ margin-top: 7%;
     display: flex;
     max-width:95%;    
     color: #072944;
+    margin-bottom: 4%;
     
 }
 
@@ -424,16 +425,24 @@ color: #072944;
     display: flex;
     margin-top: 9%;
     margin-left: 2%;
+    box-shadow:0 0 0 0px #286698;
+    margin-right: 10%;
     
     
 }
 
 input{
-    margin-right: 4%;
+    margin-right: 10%;
     font-size: large;
     list-style: none;
     border: 0;
+    padding: 0.75rem 0.75rem;
+    transition: all;
     
+    
+}
+input:hover{
+border:1px #072944
 }
 
 .texto{
@@ -441,4 +450,7 @@ input{
     color: #072944;
     background-color: aliceblue;
     margin-bottom: 20%;
+}
+.inputs_cont{
+    margin-right: 3%
 }
