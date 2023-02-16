@@ -159,6 +159,7 @@ margin-top: 7%;
 {
     display: flex;
     max-width:95%;    
+    color: #072944;
     
 }
 
@@ -354,13 +355,15 @@ display: block;
         justify-content: space-around;
         margin-top: 7%;
         margin-left: 4%;
-        font-size: 18px
+        font-size: 18px;
+        color: #072944;
 
     }
     .item_nombre_hd{
         width: 17%
     }
     .titulo_nombre_hd{
+        color: #072944;
 
     }
     .list_container_hd{
@@ -396,3 +399,46 @@ display: block;
     margin-left: 84%;
   }
   
+  .list_container_v{
+    display: flex;
+    width: 101%;
+    justify-content: space-between;
+    margin-left: 1%;
+    flex-direction: row
+}
+
+
+.item_nombre_v_local_nombre{
+    margin-left: -25%;
+    width: 100%;
+    color: #072944;
+
+}
+
+.item_nombre_v_local_fecha{
+margin-left: 1%;
+color: #072944;
+}
+
+.inputs{
+    display: flex;
+    margin-top: 9%;
+    margin-left: 2%;
+    
+    
+}
+
+input{
+    margin-right: 4%;
+    font-size: large;
+    list-style: none;
+    border: 0;
+    
+}
+
+.texto{
+    margin-top: 20%;
+    color: #072944;
+    background-color: aliceblue;
+    margin-bottom: 20%;
+}
