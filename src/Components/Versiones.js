@@ -1,8 +1,9 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState,useEffect, Component} from 'react'
 import '../App.js'
 import '../../src/css.css'
 import loadingif from '../images/loading-32.gif'
 import {Link,Route,Switch,BrowserRouter,Routes} from 'react-router-dom'
+import ListadoApps from './ListadoDeApps.js'
 
 function Versiones(){
     
@@ -42,6 +43,13 @@ if(buscar.length===0 && buscarpr.length===0)
         resultado=[]
         
     }
+    else if (buscarpr.length===0 && buscar.length!==0){
+        resultado=[]
+    }
+    else if (buscarpr.length!==0 && buscar.length===0)
+    {
+
+    }
     else{
         resultado=DATABASE_SPACE.filter((dato)=>       
         dato.Nro_version.toLowerCase()!==(buscar.toLocaleLowerCase())&& dato.Parametro.toLowerCase()===(buscarpr.toLocaleLowerCase()))        
@@ -60,19 +68,20 @@ return (
         <div className='inputs'>
         
             <div className='inputs_cont'>
-            
-                <input 
-                    type="text"
-                    value={buscar}
-                    placeholder='Version'
-                    onChange={buscador}
-                />        
-            </div>
-            <div className='inputs_cont'><input
+            <input
                     type="text"
                     value={buscarpr}
                     placeholder='Aplicacion'
                     onChange={buscadorp}
+                />    
+                
+            </div>
+            <div className='inputs_cont'>
+            <input 
+                    type="text"
+                    value={buscar}
+                    placeholder='Version'
+                    onChange={buscador}
                 />        
             </div>
             </div>
@@ -111,9 +120,11 @@ return (
         </div> 
 
     </div>
+    
 <div>
         
 </div>
+<div><ListadoApps/></div>
 </div>        
 )
 

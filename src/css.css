@@ -69,7 +69,8 @@ width:98%
     margin-top:5%;
     width: 90%; 
     margin-left: 5%;  
-    margin-bottom: 6%;  
+    margin-bottom: 6%; 
+    padding-bottom: 1% 
    
     
 }
@@ -453,4 +454,52 @@ border:1px #072944
 }
 .inputs_cont{
     margin-right: 3%
+}
+
+
+.list_container_list{
+margin: auto;
+}
+
+.item_nombre_list{
+
+}
+.item_nombre_v_list{
+
+}
+
+.listadoapp{
+    margin:auto
+}
+
+.container_1_list{
+
+    width: 32%;
+    margin: auto;
+    margin-top: 8%;
+    opacity: 90%;
+    background-color: whitesmoke;
+    box-shadow: 0 0 0 0px #286698, 0 10px 15px;
+    transition: all 450ms;
+    height: auto;
+    margin-bottom: 50px;
+    min-height: 100%;
+    border-radius: 3%;
+}
+
+.principal_container_list{
+        
+    margin: auto;
+    margin-top: 8%;
+    opacity: 90%;
+    background-color: whitesmoke;
+    box-shadow: 0 0 0 0px #286698, 0 10px 15px;
+    transition: all 450ms;
+    height: auto;
+    margin-bottom: 50px;
+    min-height: 100%;
+    border-radius: 3%;
+}
+.container_list{
+  
 }
