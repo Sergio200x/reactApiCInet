@@ -449,8 +449,9 @@ border:1px #072944
 .texto{
     margin-top: 20%;
     color: #072944;
-    background-color: aliceblue;
+    background-color: whitesmoke;
     margin-bottom: 20%;
+    margin-left: 7%;
 }
 .inputs_cont{
     margin-right: 3%
@@ -465,24 +466,38 @@ border:1px #072944
 }
 
 .versiones1{
-    border: solid 2px #072944;
+    
     background-color: whitesmoke;
     width: 80%;
+    border-radius: 2% 30%;
+    border: 3px outset #286698;
+    opacity: 90%;
+    background-color: whitesmoke;
+    box-shadow:0 0 0 0px #286698,
+    0 10px 15px ;
+    transition: all 450ms ;   
     
+}
+
+.versiones1:hover{
+    width: 98%;
 }
 .titulos_Versi{
     justify-content: space-evenly;
+    margin-left: -4%;
 }
 
 .inputs_cont_Versi{
     margin-left: 4%;
 }
 .item_nombre_hd_Versi{
-
+    width: 7%;
 }
 
-.item_nombre_hd_Versi_clocal{
 
+
+.item_nombre_hd_Versi_clocal{
+    width: 5%;
 }
 
 .item_nombre_hd_Versi_nomlocal
@@ -497,29 +512,48 @@ border:1px #072944
     width: 10%;
 }
 .container_ul{
-    height: 455px;
+    height: 375px;
     overflow: scroll;
     font-size: smaller;
     margin-left: -2%;
+    color: #072944;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
 .titulo_numeros_individual_Versi_nomlocal{
     width: 21%;
+    color: #072944;
 }
 
 .list_container_v_Versi{
     Display: flex;
     justify-content: space-around;
+    color: #072944;
 }
 .item_nombre_hd_Versi_equipo{
     width: 16%;
+    color: #072944;
+}
+.item_nombre_v_local_Versi_caja{
+
+}
+.item_nombre_hd_Versi_nro
+{
+
 }
 
 
 .versiones2{
     border: solid 2px #072944;
-    background-color: whitesmoke; 
-    width: 20%;
+    background-color: whitesmoke;   
+    max-width: 27%;
     max-height: 700px;
+    margin-left: 2%;
+    transition: all 450ms ; 
+    width: 25%; 
+    min-width: 22%;
 }
 
 .listadoapp{
@@ -527,5 +561,6 @@ border:1px #072944
 }
 .titulos_Versi{
     display: flex;
+    color: #072944;
 }
 
