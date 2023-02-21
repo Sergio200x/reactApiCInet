@@ -1,31 +1,31 @@
-import React,{useState,useEffect, Component} from 'react'
+import React,{useState,useEffect} from 'react'
 import '../App.js'
 import '../../src/css.css'
 import loadingif from '../images/loading-32.gif'
-import {Link,Route,Switch,BrowserRouter,Routes} from 'react-router-dom'
-import ListadoApps from './ListadoDeApps.js'
+import {Link} from 'react-router-dom'
+
 
 function Versiones(){
     
-    const [DATABASE_SPACE, setDATABASE_SPACE]= useState([]) 
+    const [VersionesPRP, setVersionesPRP]= useState([]) 
     const [buscarpr,setbuscarpr]= useState("")   
     const [buscar,setbuscar]= useState("")  
     useEffect (() => {        
-            fetch("http://192.168.1.57:3036/versiones")
+            fetch("http://localhost:3036/versiones")
             .then(response => response.json())
-            .then( data =>{ setDATABASE_SPACE(data.data)} )
+            .then( data =>{ setVersionesPRP(data.data)} )
             .catch(error =>console.error(error))
             }, []) 
 
-    /* const [DATABASE_SPACEfrq, setDATABASE_SPACEfrq]= useState([])    
+    const [VersionesFRP, setVersionesFRP]= useState([])    
     useEffect (() => {        
-            fetch("http://localhost:3035/DATABASE_SPACE")
+            fetch("http://localhost:3035/versiones")
             .then(response => response.json())
-            .then( data =>{ setDATABASE_SPACEfrq(data.data)} )
+            .then( data =>{ setVersionesFRP(data.data)} )
             .catch(error =>console.error(error))
-            }, []) */                 
+            }, [])                 
       
-const loading = <img src={loadingif} className="loading"/>
+
 
 
 const buscador = (version)=>{
@@ -34,10 +34,16 @@ const buscador = (version)=>{
 const buscadorp = (buscarpp)=>{
     setbuscarpr(buscarpp.target.value)   
 }
+let versiones=[]
+if(VersionesPRP.length>0||VersionesFRP.length>0)
+{
+    versiones.push(VersionesPRP)
+    
+    versiones.push(VersionesFRP)
+    
+}
 
-//"local": "FSMCA",
 let resultado=[]
-let vacio="Por Favor ingrese la version y el nombre de la aplicacion a buscar"
 if(buscar.length===0 && buscarpr.length===0)
     {
         resultado=[]
@@ -48,26 +54,31 @@ if(buscar.length===0 && buscarpr.length===0)
     }
     else if (buscarpr.length!==0 && buscar.length===0)
     {
-
+      
     }
     else{
-        resultado=DATABASE_SPACE.filter((dato)=>       
+        resultado=versiones.map((vers)=> 
+        vers.filter((dato)=>       
         dato.Nro_version.toLowerCase()!==(buscar.toLocaleLowerCase())&& dato.Parametro.toLowerCase()===(buscarpr.toLocaleLowerCase()))        
-        }
+        )
+     
+       
+    }
+
 
 
 
 
 return (
-    <div className='container_1'>
-    <div className='principal_container'>         
+    <div className='container_Versi'>
+        <div className='principal_container_Versi'>         
     
-        <h2 className='titulo'>DashBoard Cinet</h2>
-        <div className='container'>
+        <h2 className='titulo_Versi'>DashBoard Cinet</h2>
+        <div className='container_Versi'>
             
-        <div className='inputs'>
+        <div className='inputs_Versi'>
         
-            <div className='inputs_cont'>
+            <div className='inputs_cont_Versi'>
             <input
                     type="text"
                     value={buscarpr}
@@ -76,7 +87,7 @@ return (
                 />    
                 
             </div>
-            <div className='inputs_cont'>
+            <div className='inputs_cont_Versi'>
             <input 
                     type="text"
                     value={buscar}
@@ -85,32 +96,37 @@ return (
                 />        
             </div>
             </div>
-            <div className='titulos'>
-            <div className='titulo_numeros_individual'><h4 className='h4_titulo'>Cod_local</h4></div>            
-            <div className='titulo_numeros_individual'><h4 className='h4_titulo'> Nombre del local</h4></div>
-            <div className='titulo_numeros_individual'><h4 className='h4_titulo'>Aplicativo</h4></div>
-            <div className='titulo_numeros_individual'><h4 className='h4_titulo'>Nro de Version</h4></div>
-            <div className='titulo_numeros_individual'><h4 className='h4_titulo'>Fecha de Notificación</h4></div>
-            <div className='titulo_numeros_individual'><h4 className='h4_titulo'>Equipo</h4></div>
-            <div className='titulo_numeros_individual'><h4 className='h4_titulo'>Caja/Nro equipo</h4></div>        
+            <div className='titulos_Versi'>
+            <div className='titulo_numeros_individual_Versi'><h4 className='h4_titulo_Versi'>Cod_local</h4></div>            
+            <div className='titulo_numeros_individual_Versi_nomlocal'><h4 className='h4_titulo_Versi'> Nombre del local</h4></div>
+            <div className='titulo_numeros_individual_Versi'><h4 className='h4_titulo_Versi'>Aplicativo</h4></div>
+            <div className='titulo_numeros_individual_Versi'><h4 className='h4_titulo_Versi'>Nro de Version</h4></div>
+            <div className='titulo_numeros_individual_Versi'><h4 className='h4_titulo_Versi'>Fecha</h4></div>
+            <div className='titulo_numeros_individual_Versi'><h4 className='h4_titulo_Versi'>Equipo</h4></div>
+            <div className='titulo_numeros_individual_Versi'><h4 className='h4_titulo_Versi'>Caja/Nro equipo</h4></div>        
            
             </div>
            
-                
-        {resultado.length===0? <div className='texto'><h2><strong> Por favor Complete la Version y el aplicativo a Buscar</strong></h2></div>:resultado.map((lista,i)=>{
-         return <ul key={i}>
-              <div className='list_container_v'> 
-             <div className='item_nombre_hd'><li className='item_nombre_v_local'><strong>{lista.Codigo_Local}</strong></li></div>
-              <div className='item_nombre_hd'><li className='item_nombre_v_local_nombre'><strong>{lista.Nombre_local}</strong></li></div>
-              <div className='item_nombre_hd'><li className='item_nombre_v_local'><strong>{lista.Parametro}</strong></li></div>
-              <div className='item_nombre_hd'><li className='item_nombre_v_local'><strong>{lista.Nro_version}</strong></li></div>
-              <div className='item_nombre_hd'><li className='item_nombre_v_local_fecha'><strong>{lista.FechaTrans}</strong></li></div>
-              <div className='item_nombre_hd'><li className='item_nombre_v_local'><strong>{lista.EQUIPO}</strong></li></div>
-              <div className='item_nombre_hd'><li className='item_nombre_v_local'><strong>{lista.Caja}</strong></li></div>      
+               <div className='container_ul'> 
+        {resultado.length===0? <div className='texto'>
+        <h2><strong> Por favor Complete la Version y el aplicativo a Buscar</strong></h2>
+        </div>:resultado.map((lista,i)=>{
+         return  lista.map((list,i)=>{
+            return <ul key={i}> 
+              <div className='list_container_v_Versi'> 
+             <div className='item_nombre_hd_Versi_clocal'><li className='item_nombre_v_local_Versi'><strong>{list.Codigo_Local}</strong></li></div>
+              <div className='item_nombre_hd_Versi_nomlocal'><li className='item_nombre_v_local_Versi'><strong>{list.Nombre_local}</strong></li></div>
+              <div className='item_nombre_hd_Versi'><li className='item_nombre_v_local_Versi'><strong>{list.Parametro}</strong></li></div>
+              <div className='item_nombre_hd_Versi'><li className='item_nombre_v_local_Versi'><strong>{list.Nro_version}</strong></li></div>
+              <div className='item_nombre_hd_Versi'><li className='item_nombre_v_local_Versi'><strong>{list.FechaTrans}</strong></li></div>
+              <div className='item_nombre_hd_Versi_equipo'><li className='item_nombre_v_local_Versi'><strong>{list.EQUIPO}</strong></li></div>
+              <div className='item_nombre_hd_Versi'><li className='item_nombre_v_local_Versi'><strong>{list.Caja}</strong></li></div>      
               </div>   
             </ul>
+         })
+         
             })}
-            
+            </div>
            
             <div className='container_volver'>                           
             <h2 className='volver'>
@@ -124,7 +140,7 @@ return (
 <div>
         
 </div>
-<div><ListadoApps/></div>
+
 </div>        
 )
 

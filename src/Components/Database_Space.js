@@ -5,10 +5,9 @@ import flecha_media from '../images/flecha-centro.png'
 import flecha_alta from '../images/flecha-subiendo.png'
 import flecha_baja from '../images/flecha-bajando.png'
 import estrella from '../images/estrella.png'
-import logo_Cinet from '../images/LogoCinetMinimal.png'
 import flecha_subiendo from '../images/flecha-diagonal.png'
 import loadingif from '../images/loading-32.gif'
-import {Link,Route,Switch,BrowserRouter,Routes} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 function Database_Space(){
     

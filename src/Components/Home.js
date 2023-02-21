@@ -4,13 +4,12 @@ import '../../src/css.css'
 import flecha_media from '../images/flecha-centro.png'
 import flecha_alta from '../images/flecha-subiendo.png'
 import flecha_baja from '../images/flecha-bajando.png'
-import pala from '../images/pala.png'
 import estrella from '../images/estrella.png'
 import rey from '../images/rey1.png'
-import logo_Cinet from '../images/LogoCinetMinimal.png'
+
 import flecha_subiendo from '../images/flecha-diagonal.png'
 import loadingif from '../images/loading-32.gif'
-import {Link,Route,Switch,BrowserRouter,Routes} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 function App(){
     const url="http://192.168.1.57:3030/"
@@ -131,7 +130,7 @@ const horas_mesa =[
                 <Link to="/LOG_SPACE"  className='volverlink'>Espacio LOG BBDD</Link>
                     </h2>  
                     <h2 className='volver'>
-                <Link to="/Versiones"  className='volverlink'>Versiones</Link>
+                <Link to="/ListadoDeApps"  className='volverlink'>Versiones</Link>
                     </h2>                     
                 </div>       
             </div> 

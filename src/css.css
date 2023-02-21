@@ -457,49 +457,75 @@ border:1px #072944
 }
 
 
-.list_container_list{
-margin: auto;
+.versiones{
+    display: flex;
+    justify-content: space-between;
+    max-height: 20%;
+    margin-top: 5%;
 }
 
-.item_nombre_list{
+.versiones1{
+    border: solid 2px #072944;
+    background-color: whitesmoke;
+    width: 80%;
+    
+}
+.titulos_Versi{
+    justify-content: space-evenly;
+}
+
+.inputs_cont_Versi{
+    margin-left: 4%;
+}
+.item_nombre_hd_Versi{
 
 }
-.item_nombre_v_list{
 
+.item_nombre_hd_Versi_clocal{
+
+}
+
+.item_nombre_hd_Versi_nomlocal
+{
+    width: 21%;
+}
+.inputs_Versi{
+    display: flex;
+
+}
+.titulo_numeros_individual_Versi{
+    width: 10%;
+}
+.container_ul{
+    height: 455px;
+    overflow: scroll;
+    font-size: smaller;
+    margin-left: -2%;
+}
+.titulo_numeros_individual_Versi_nomlocal{
+    width: 21%;
+}
+
+.list_container_v_Versi{
+    Display: flex;
+    justify-content: space-around;
+}
+.item_nombre_hd_Versi_equipo{
+    width: 16%;
+}
+
+
+.versiones2{
+    border: solid 2px #072944;
+    background-color: whitesmoke; 
+    width: 20%;
+    max-height: 700px;
 }
 
 .listadoapp{
-    margin:auto
+    margin-top: 17%;
+}
+.titulos_Versi{
+    display: flex;
 }
 
-.container_1_list{
-
-    width: 32%;
-    margin: auto;
-    margin-top: 8%;
-    opacity: 90%;
-    background-color: whitesmoke;
-    box-shadow: 0 0 0 0px #286698, 0 10px 15px;
-    transition: all 450ms;
-    height: auto;
-    margin-bottom: 50px;
-    min-height: 100%;
-    border-radius: 3%;
-}
-
-.principal_container_list{
-        
-    margin: auto;
-    margin-top: 8%;
-    opacity: 90%;
-    background-color: whitesmoke;
-    box-shadow: 0 0 0 0px #286698, 0 10px 15px;
-    transition: all 450ms;
-    height: auto;
-    margin-bottom: 50px;
-    min-height: 100%;
-    border-radius: 3%;
-}
-.container_list{
-  
-}

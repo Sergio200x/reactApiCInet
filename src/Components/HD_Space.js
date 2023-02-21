@@ -1,14 +1,8 @@
 import React,{useState,useEffect} from 'react'
 import '../App.js'
 import '../../src/css.css'
-import flecha_media from '../images/flecha-centro.png'
-import flecha_alta from '../images/flecha-subiendo.png'
-import flecha_baja from '../images/flecha-bajando.png'
-import estrella from '../images/estrella.png'
-import logo_Cinet from '../images/LogoCinetMinimal.png'
-import flecha_subiendo from '../images/flecha-diagonal.png'
-import loadingif from '../images/loading-32.gif'
-import {Link,Route,Switch,BrowserRouter,Routes} from 'react-router-dom'
+
+import {Link} from 'react-router-dom'
 
 function HD_Space(){
     
@@ -42,16 +36,8 @@ function HD_Space(){
             else{
                 HD_SPACE_locales.push("No hay Datos")               
             } 
+ 
 
-    
-
-const icono_flecha_media= <img src={flecha_media} className="icono" />
-const icono_flecha_baja= <img src={flecha_baja} className="icono" />
-const icono_flecha_alta= <img src={flecha_alta} className="icono_flechaalta" />
-const icono_estrella= <img src={estrella} className="icono_lente" />
-const icono_flecha_diagonal = <img src={flecha_subiendo} className="icono"/>
-//const icono_Cinet = <img src={logo_Cinet} clasName="logo"width="30%"  />
-const loading = <img src={loadingif} className="loading"/>
 
 
    
