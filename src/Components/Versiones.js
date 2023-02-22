@@ -6,13 +6,17 @@ import {Link} from 'react-router-dom'
 import Select from 'react-select'
 
 
+
 function Versiones(){
     
     const [VersionesPRP, setVersionesPRP]= useState([]) 
     const [buscarpr,setbuscarpr]= useState("")   
     const [buscar,setbuscar]= useState("")  
+    const url = "http://localhost:3036/versiones"
+    
+   
     useEffect (() => {        
-            fetch("http://localhost:3036/versiones")
+            fetch(url)
             .then(response => response.json())
             .then( data =>{ setVersionesPRP(data.data)} )
             .catch(error =>console.error(error))
