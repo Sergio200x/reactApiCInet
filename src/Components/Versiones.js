@@ -3,7 +3,7 @@ import '../App.js'
 import '../../src/css.css'
 import loadingif from '../images/loading-32.gif'
 import {Link} from 'react-router-dom'
-
+import Select from 'react-select/dist/declarations/src/Select.js'
 
 
 
@@ -37,14 +37,13 @@ const buscador = (version)=>{
     setbuscar(version.target.value)
 }
 const buscadorp = (buscarpp)=>{
-    setbuscarpr(buscarpp.target.value) 
-     
+    setbuscarpr(buscarpp.target.value)   
+}
 }
 const buscadorselect = (select)=>{
-    setbuscarpr(select.value) 
-    console.log(select.value)
-     
-}
+    setbuscarpr(select.value)  
+
+
 let versiones=[]
 if(VersionesPRP.length>0||VersionesFRP.length>0)
 {
@@ -76,21 +75,22 @@ if(buscar.length===0 && buscarpr.length===0)
        
     }
     let listadoapps=[
-    {label:"Actualizadatos", value:"Actualizadatos"},
-    {label:"AppMtz", value:"AppMtz"},
-    {label:"Centralizador", value:"Centralizador"},
-    {label:"CentralizadorComanda", value:"CentralizadorComanda"},
-    {label:"DescargaLocal", value:"DescargaLocal"},
-    {label:"DualpointCaja", value:"DualpointCaja"},
-    {label:"Dualpointllamador", value:"Dualpointllamador"},
-    {label:"Informes", value:"Informes"},
-    {label:"Meli", value:"Meli"},
-    {label:"OCX", value:"OCX"},
-    {label:"PantallaComanda", value:"PantallaComanda"},
-    {label:"Peya", value:"Peya"},
-    {label:"Profit", value:"Profit"},
-    {label:"Rappi", value:"Rappi"},
-    {label:"totem.exe", value:"totem.exe"}]
+    {label:"Actualizadatos", value:{buscarpr}},
+    {label:"AppMtz", value:{buscarpr}},
+    {label:"Centralizador", value:{buscarpr}},
+    {label:"CentralizadorComanda", value:{buscarpr}},
+    {label:"DescargaLocal", value:{buscarpr}},
+    {label:"DualpointCaja", value:{buscarpr}},
+    {label:"Dualpointllamador", value:{buscarpr}},
+    {label:"Informes", value:{buscarpr}},
+    {label:"Informes", value:{buscarpr}},
+    {label:"Meli", value:{buscarpr}},
+    {label:"OCX", value:{buscarpr}},
+    {label:"PantallaComanda", value:{buscarpr}},
+    {label:"Peya", value:{buscarpr}},
+    {label:"Profit", value:{buscarpr}},
+    {label:"Rappi", value:{buscarpr}},
+    {label:"totem.exe", value:{buscarpr}}]
 
 
 
@@ -101,15 +101,14 @@ return (
     
         <h2 className='titulo_Versi'>DashBoard Cinet</h2>
         <div className='container_Versi'>
-        <div>
+          <div>
               <Select
               options={listadoapps}
               onChange={buscadorselect}
               />
-             </div> 
+             </div>   
         <div className='inputs_Versi'>
         
-
             <div className='inputs_cont_Versi'>
             <input
                     type="text"
@@ -119,7 +118,7 @@ return (
                 />    
                 
             </div>
-              
+            
               
            
             <div className='inputs_cont_Versi'>
