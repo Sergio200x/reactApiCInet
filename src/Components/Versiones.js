@@ -4,6 +4,7 @@ import '../../src/css.css'
 import loadingif from '../images/loading-32.gif'
 import {Link} from 'react-router-dom'
 import Select from 'react-select'
+//import makeAnimated from 'react-select/animated'
 
 
 
@@ -43,7 +44,7 @@ const buscadorp = (buscarpp)=>{
 const buscadorselect = (select)=>{
     setbuscarpr(select.value)  
 }
-
+const animatedComponents = makeAnimated()
 
 let versiones=[]
 if(VersionesPRP.length>0||VersionesFRP.length>0)
@@ -109,6 +110,7 @@ return (
               options={listadoapps}
               onChange={buscadorselect}
               defaultValue={{label:"Aplicativos", value:"Aplicativos"}}
+              components={animatedComponents}
               />
              </div> 
             
