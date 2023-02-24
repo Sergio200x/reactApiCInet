@@ -3,7 +3,7 @@ import '../App.js'
 import '../../src/css.css'
 import loadingif from '../images/loading-32.gif'
 import {Link} from 'react-router-dom'
-import Select from 'react-select'
+
 
 
 
@@ -12,7 +12,7 @@ function Versiones(){
     const [VersionesPRP, setVersionesPRP]= useState([]) 
     const [buscarpr,setbuscarpr]= useState("")   
     const [buscar,setbuscar]= useState("")  
-    const url = "http://localhost:3036/versiones"
+    const url = "http://192.168.1.57:3037/versiones"
     
    
     useEffect (() => {        
@@ -24,7 +24,7 @@ function Versiones(){
 
     const [VersionesFRP, setVersionesFRP]= useState([])    
     useEffect (() => {        
-            fetch("http://localhost:3035/versiones")
+            fetch("http://192.168.1.57:3035/versiones")
             .then(response => response.json())
             .then( data =>{ setVersionesFRP(data.data)} )
             .catch(error =>console.error(error))

@@ -461,8 +461,11 @@ border:1px #072944
 .versiones{
     display: flex;
     justify-content: space-between;
-    max-height: 20%;
+    max-height: 1200px;
     margin-top: 5%;
+    height: 832px;
+    width: 1200px;
+    max-width: 1400px;
 }
 
 .versiones1{
@@ -512,11 +515,13 @@ border:1px #072944
     width: 10%;
 }
 .container_ul{
-    height: 375px;
+    height: 472px;
     overflow: scroll;
     font-size: smaller;
     margin-left: -2%;
     color: #072944;
+    width: 940px;
+    
 }
 
 ::-webkit-scrollbar {
