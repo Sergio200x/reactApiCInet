@@ -484,8 +484,9 @@ border:1px #072944
 
 
 .titulos_Versi{
-    justify-content: space-evenly;
-    margin-left: -4%;
+    display: flex;
+    color: #072944;
+    height: 4rem;
 }
 
 .inputs_cont_Versi{
@@ -494,7 +495,7 @@ border:1px #072944
     width: 22%;
 }
 .item_nombre_hd_Versi{
-    width: 7%;
+    width: 11%;
 }
 
 
@@ -505,7 +506,8 @@ border:1px #072944
 
 .item_nombre_hd_Versi_nomlocal
 {
-    width: 21%;
+    width: 19%;
+    
 }
 .inputs_Versi{
     display: flex;
@@ -530,6 +532,29 @@ border:1px #072944
 .titulo_numeros_individual_Versi_nomlocal{
     width: 21%;
     color: #072944;
+    margin-left: -1%;;
+}
+
+.titulo_numeros_individual_Versi_fecha{
+    color: #072944;
+}
+
+.titulo_numeros_individual_Versi_app{
+    color: #072944;
+    margin-left: 5%;
+}
+.titulo_numeros_individual_Versi_nro{
+    color: #072944;
+    margin-left: 8%;
+    width: 11%;
+}
+.titulo_numeros_individual_Versi_equipo{
+    color: #072944;
+    margin-left: 11%;
+}
+.titulo_numeros_individual_Versi_caja{
+    color: #072944;
+    margin-left: 6%;
 }
 
 .list_container_v_Versi{
@@ -563,9 +588,5 @@ border:1px #072944
 
 .listadoapp{
     margin-top: 17%;
-}
-.titulos_Versi{
-    display: flex;
-    color: #072944;
 }
 

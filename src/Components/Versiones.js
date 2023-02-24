@@ -29,11 +29,8 @@ function Versiones(){
             .then(response => response.json())
             .then( data =>{ setVersionesFRP(data.data)} )
             .catch(error =>console.error(error))
-            }, [])                 
+            }, [])               
       
-
-
-
 const buscador = (version)=>{
     setbuscar(version.target.value)
 }
@@ -44,7 +41,7 @@ const buscadorp = (buscarpp)=>{
 const buscadorselect = (select)=>{
     setbuscarpr(select.value)  
 }
-const animatedComponents = makeAnimated()
+
 
 let versiones=[]
 if(VersionesPRP.length>0||VersionesFRP.length>0)
@@ -80,14 +77,14 @@ if(buscar.length===0 && buscarpr.length===0)
         {label:"Actualizadatos", value:"Actualizadatos"},
         {label:"AppMtz", value:"AppMtz"},
         {label:"Centralizador", value:"Centralizador"},
-        {label:"CentralizadorComanda", value:"CentralizadorComanda"},
+        {label:"CentralizadorComanda", value:"Cent. Comanda"},
         {label:"DescargaLocal", value:"DescargaLocal"},
         {label:"DualpointCaja", value:"DualpointCaja"},
-        {label:"Dualpointllamador", value:"Dualpointllamador"},
+        {label:"Dualpointllamador", value:"Dp. llamador"},
         {label:"Informes", value:"Informes"},
         {label:"Meli", value:"Meli"},
         {label:"OCX", value:"OCX"},
-        {label:"PantallaComanda", value:"PantallaComanda"},
+        {label:"PantallaComanda", value:"P. Comanda"},
         {label:"Peya", value:"Peya"},
         {label:"Profit", value:"Profit"},
         {label:"Rappi", value:"Rappi"},
@@ -110,7 +107,7 @@ return (
               options={listadoapps}
               onChange={buscadorselect}
               defaultValue={{label:"Aplicativos", value:"Aplicativos"}}
-              components={animatedComponents}
+              
               />
              </div> 
             
@@ -128,11 +125,11 @@ return (
             <div className='titulos_Versi'>
             <div className='titulo_numeros_individual_Versi'><h4 className='h4_titulo_Versi'>Local</h4></div>            
             <div className='titulo_numeros_individual_Versi_nomlocal'><h4 className='h4_titulo_Versi'> Nombre del local</h4></div>
-            <div className='titulo_numeros_individual_Versi'><h4 className='h4_titulo_Versi'>App</h4></div>
-            <div className='titulo_numeros_individual_Versi'><h4 className='h4_titulo_Versi'>Nro de Version</h4></div>
-            <div className='titulo_numeros_individual_Versi'><h4 className='h4_titulo_Versi'>Fecha</h4></div>
-            <div className='titulo_numeros_individual_Versi'><h4 className='h4_titulo_Versi'>Equipo</h4></div>
-            <div className='titulo_numeros_individual_Versi'><h4 className='h4_titulo_Versi'>Caja/Nro equipo</h4></div>        
+            <div className='titulo_numeros_individual_Versi_app'><h4 className='h4_titulo_Versi'>App</h4></div>
+            <div className='titulo_numeros_individual_Versi_nro'><h4 className='h4_titulo_Versi'>Nro de Version</h4></div>
+            <div className='titulo_numeros_individual_Versi_fecha'><h4 className='h4_titulo_Versi'>Fecha</h4></div>
+            <div className='titulo_numeros_individual_Versi_equipo'><h4 className='h4_titulo_Versi'>Equipo</h4></div>
+            <div className='titulo_numeros_individual_Versi_caja'><h4 className='h4_titulo_Versi'>Caja/Nro equipo</h4></div>        
            
             </div>
            
