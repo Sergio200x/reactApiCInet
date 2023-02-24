@@ -482,9 +482,7 @@ border:1px #072944
     
 }
 
-.versiones1:hover{
-    width: 98%;
-}
+
 .titulos_Versi{
     justify-content: space-evenly;
     margin-left: -4%;
@@ -492,6 +490,8 @@ border:1px #072944
 
 .inputs_cont_Versi{
     margin-left: 4%;
+   
+    width: 22%;
 }
 .item_nombre_hd_Versi{
     width: 7%;

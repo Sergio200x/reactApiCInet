@@ -15,10 +15,7 @@ return (
     <div className='versiones'>
         <div className='versiones1'>            
         <Versiones/>
-        </div>
-        <div className='versiones2'>  
-        <ListadoApps/>
-        </div>
+        </div>        
    </div>
 )
    
